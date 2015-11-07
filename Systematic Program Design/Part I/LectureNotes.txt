@@ -1,0 +1,12 @@
+=== Random notes for SPD Part I ===========
+
+# Started during lecture 2, "Enumeration" as a way to stay awake
+# I'm not a note-taker, so this isn't a good reference for anyone
+Enumeration is for keeping track of a number of distinct values (not numbers)
+Examples in enumeration are redundant. # I find it's pretty much true everywhere discussed so far.
+
+# The rules being discussed are useful only in the sense of an introduction to something that should be discussed in more theoretical or practical terms. This is somewhere in a gelatinous in-between.
+
+# Itemization
+Itemization is for dealing with several subclasses at once
+Itemization and enumeration both require functions that deal with multiple cases (predicates).

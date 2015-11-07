@@ -10,3 +10,11 @@ Examples in enumeration are redundant. # I find it's pretty much true everywhere
 # Itemization
 Itemization is for dealing with several subclasses at once
 Itemization and enumeration both require functions that deal with multiple cases (predicates).
+# These discussions will come in handy when looking at data definitions in the future, probably. It's not doing much for me as a discipline itself, though.
+If a gives subclass is the last of its type, then no checks on value are needed. # This seems wrong on many levels.
+All guards can be eliminated if the all the remaining possibilities are of the same type.
+
+# HtDF with data types
+# It's unclear how check-expects are implemented in languages other than Racket...at least, I'm not familiar with them.
+Need at least as many tests as the number of cases in an enumeration.
+In itemization, need a test for each case, plus tests for variances in ranges.

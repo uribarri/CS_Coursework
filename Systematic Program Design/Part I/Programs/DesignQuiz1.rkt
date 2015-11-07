@@ -4,6 +4,7 @@
 (require 2htdp/image)
 
 ;; Larger-image.rkt
+;; This assignment is self-graded, so it's unclear how helpful it will be for purposes of working on style.
 
 ;; Image, Image -> Boolean
 ;; Takes two images and answers whether the first is larger than the second
@@ -13,10 +14,11 @@
 (check-expect (larger? (square 10 "solid" "red") (square 20 "solid" "blue")) false)
 (check-expect (larger? (square 10 "solid" "red") (triangle 10 "solid" "red")) true)
 (check-expect (larger? (square 10 "solid" "red") (square 10 "solid" "blue")) false)
+
 ; stub
 ;(define (larger? i1 i2) false) ;stub
 
-
+; template
 #;
 (define (larger? i1 i2)
   (... i1 i2))

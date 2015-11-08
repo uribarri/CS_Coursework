@@ -12,3 +12,10 @@ I'm also likely to enjoy the more theoretical aspects more than the practical as
 I am not a note-taker by design, but I've tried to jot some things down as I go. I only have just discovered Markdown, so I'll use that in many of my notes. SPDI, unfortunately, came too early, so my notes are mostly illegible for that course. But like I said, I don't plan on anyone actually getting value out of those.
 
 I will sync anything fairly substantive into the repo here; one of my goals is to learn Git better, since I don't know much now. Basic homework-type jottings won't make the cut, but project-level things will. This too because I plan to be working on materials in various places.
+
+## Courses completed
+
+| Course Name | Certificate? | Materials | Date | Comments and notes|
+|:------------|:------------:|:---------:|:----:|:------------------|
+|Intro to Computer Science (CS50) | *No* (iTunesU) | *none* | ~2012 | When EdX and Coursera were still in gestation |
+|Systematic Program Design: Part I| [link](https://courses.edx.org/certificates/user/359704/course/course-v1:UBCx+SPD1x+1T2016) | [link](https://github.com/uribarri/CS_Coursework/tree/master/Systematic%20Program%20Design/Part%20I) | 11/2015 | Chose to ignore final project, since feedback wasn't available and there's plenty of room to practice elsewhere. |

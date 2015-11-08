@@ -18,3 +18,11 @@ All guards can be eliminated if the all the remaining possibilities are of the s
 # It's unclear how check-expects are implemented in languages other than Racket...at least, I'm not familiar with them.
 Need at least as many tests as the number of cases in an enumeration.
 In itemization, need a test for each case, plus tests for variances in ranges.
+
+When designing a world, make a "wish list" of items that have been started (functions that have only been defined but not implemented) and have some standardized way of searching for them.
+
+# The emphasis on the utility of a process is well-placed.
+
+Functions on large enumerations: usually there are a few special examples in the enumerations, and most bits are treated similarly.
+
+# I'm choosing to not do the final project. I get the idea, and it's self-evaluated like the design quizzes. I would get no value from self-evaluating; and while I would get value from practice, I can just as easily practice on something else; and that something else can be work from other classes. I pass with 70%, full credit for everything but the final project.

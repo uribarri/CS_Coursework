@@ -9,7 +9,7 @@ I'm doing the courses as they become available in live sessions on their respect
 I'm also likely to enjoy the more theoretical aspects more than the practical aspects. I'm going to push through the practical anyway, because I want my final products to be pretty comparable with professional best practices. But my goals are to do high-level type stuff; system administration, for example, is not high on my list of interests.
 
 ## Notes on the materials
-I am not a note-taker by design, but I've tried to jot some things down as I go. I only have just discovered Markdown, so I'll use that in many of my notes. SPDI, unfortunately, came too early, so my notes are mostly illegible for that course. But like I said, I don't plan on anyone actually getting value out of those.
+I am not a note-taker by design, but I've tried to jot some things down as I go. I only have just discovered Markdown, so I'll use that in many of my notes. SPD:I, unfortunately, came too early, so my notes are mostly illegible for that course. But like I said, I don't plan on anyone actually getting value out of those.
 
 I will sync anything fairly substantive into the repo here; one of my goals is to learn Git better, since I don't know much now. Basic homework-type jottings won't make the cut, but project-level things will. This too because I plan to be working on materials in various places.
 

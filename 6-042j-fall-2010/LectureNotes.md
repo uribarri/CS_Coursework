@@ -19,7 +19,7 @@ In mathematics, a proof is a verification of a *proposition* by a chain of *logi
   * $a^4 + b^4 + c^4 = d^4$ has no integer solutions
     - Euler proposed, a Harvard man disproved.
     - written $\exists (a,b,c,d) \in \Bbb{N}^+$, $a^4 + b^4 + c^4 = d^4$
-  * $313(x^2 + y^2) = z^2$ has no positive integer solutions
+  * $313(x^3 + y^3) = z^3$ has no positive integer solutions
     - It does but the smallest is 6-digits long!
   * The regions in any map can be colored in 4 colors so that the adjacent regions have different colors.
   * Every positive integer (but 2) is the sum of two primes (e.g., 24 = 11 + 13) [Golbach's conjecture]
@@ -34,6 +34,12 @@ An implication $p \Rightarrow q$ is true if $p$ false or $q$ true. In other word
 | F | T | T | F |
 | T | F | F | F |
 | F | F | T | T |
+
+#### From the reading
+  * The statement $\neg Q \rightarrow \neg P$ is logically equivalent to $P \rightarrow Q$, and is called the *contrapositive*. The truth table bears this out.
+  * The statement $Q \rightarrow P$ is the *converse*, and the truth table shows that the two are *not* logically equivalent.
+  * The statement $(P \rightarrow Q) \wedge (Q \rightarrow P)$ is equivalent to $P \leftrightarrow Q$.
+  * Moving a $\neg$ across a quantifier ($\forall, \exists$) swaps the quantifier ($\exists, \forall$).
 
 ### Axioms
 An axiom is a proposition that is assumed to be true. They are problem-specific. They should be
@@ -74,3 +80,5 @@ There were more examples, but I think we get the idea.
 A false proof example shows that just looking at the $...$ part of a predicate definition doesn't trip you up. (The "all horses are the same color" proof, where $P(1) \not \Rightarrow P(2)$.)
 
 Then the "tiling the courtyard" (a $2^n \times 2^n$ region) using L-shaped tiles proof. Base case was $P(0) = 1$ tile, where the statue went. Solution discussion at video `1:09:00` (about). What this demonstrated: if you can't prove something simpler, it may be easier to prove something harder.
+
+$(P \wedge \neg Q) \vee R \Rightarrow S$

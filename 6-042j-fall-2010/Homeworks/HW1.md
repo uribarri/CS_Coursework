@@ -96,9 +96,11 @@ $$\text{if } r^{1/5} \text{ is not irrational, then } r \text{ is not irrational
 
 **Axiom 1**: "Not irrational" means "rational".
 
-**Axiom 2**: The product of rational numbers is rational.
+**Lemma 1**: The product of rational numbers is rational.
 
-If $r^{1/5}$ is rational (by Axiom 1), then by Axiom 2
+Proof of Lemma 1: if $a = \frac{b}{c}$ is rational, and $d = \frac{e}{f}$ is rational, then $ad = \frac{be}{cf}$ is also rational.
+
+If $r^{1/5}$ is rational (by Axiom 1), then by Lemma 1
 $$r^{1/5} r^{1/5} r^{1/5} r^{1/5} r^{1/5} = r^{(1/5)\cdot5} = r$$
 is rational.
 
@@ -116,4 +118,4 @@ Let any two of $w,x,y \in \text{ odd}$. Without loss of generality, let those tw
 
 Let all three of $w,x,y \in \text{ odd}$. Now $w = 2i + 1$, $x = 2j+1$, and $y = 2k + 1$. Then $z^2 = 4(i^2 + j^2 + k^2) + 4(i + j + k) + 3$, which is odd.
 
-I have **not proven** the proposition. It appears to fail if two of the three numbers are simultaneously odd.
+I have **not proven** the proposition. It appears to fail if two of the three numbers are simultaneously odd (the sum of two odds is always an even).

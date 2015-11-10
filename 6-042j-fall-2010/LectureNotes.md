@@ -47,11 +47,21 @@ An axiom is a proposition that is assumed to be true. They are problem-specific.
   * Complete: if it can be used to prove every proposition is either true or false
   * Kurt Godel proved there is no such thing as a set of axioms that is both consistent and complete. I.e., there will always be some propositions that can never be proved.
 
+#### From the reading
+  * Important propositions are *theorems*
+  * A preliminary proposition used to prove later propositions is a *lemma*
+  * A *corollary* follows from another proposition in just a few logical steps.
+
+The *axiomatic method* is the basis of all math, and all math can be derived from (it seems) the Zermelo-Frankel set theory with Choice (ZFC).
+
 ## Lecture 2
 
 ### Indirect proofs  
 Proof by contradiction: start by assuming $\neg p$ is true, and then use that to derive a contradiction. If $\neg p$ is False is true, then this is the last line in the table above, and $\neg p$ must be false and therefore $p$ is True. (???) A contradiction is labeled $\#$.
   * The irrationality of $\sqrt 2$ is proven by contradiction: assume it is expressed as a ratio $a/b$ of integers in lowest form, and then show that both $a$ and $b$ are even, and therefore $a/b$ is not lowest form. $\#$
+
+#### From the reading
+Proof by contradiction is often used in conjunction with the Well-Ordering Principle, which states that for any set, there is a smallest member of that set; the typical proof then goes on to show that assuming the opposite of the proposition leads to a contradiction in which a smaller member of the set exists.
 
 ### Proof by Induction
 Most powerful proof technique (important in CS because of recursion, as I understand...)
@@ -80,3 +90,8 @@ There were more examples, but I think we get the idea.
 A false proof example shows that just looking at the $...$ part of a predicate definition doesn't trip you up. (The "all horses are the same color" proof, where $P(1) \not \Rightarrow P(2)$.)
 
 Then the "tiling the courtyard" (a $2^n \times 2^n$ region) using L-shaped tiles proof. Base case was $P(0) = 1$ tile, where the statue went. Solution discussion at video `1:09:00` (about). What this demonstrated: if you can't prove something simpler, it may be easier to prove something harder.
+
+#### From the reading
+The Invariant Method is used to demonstrate that certain propositions are invariant, and is important for the verification of software. It is essentially inductive, as long as $P(t)$ is chosen such that it is the invariant to be demonstrated.
+
+There is a lovely proof of the (un)solvability of the 8-puzzle ending on p. 64 of the notes. The 15-puzzle, which is left as an exercise for readers, is solved by the same method: working out the parity of the number of *inversions* in the puzzle. Where for the 8-puzzle the number was always $0, \pm 2$, in the 15-puzzle it's always $\pm 1, \pm 3$. The parity of inversions is conserved in the 8-puzzle case. In the 15-puzzle case, the inversion parity is added to the parity of the empty square row position, and the total parity is conserved in all moves. So if the inversion parity is odd, and the empty square is on the bottom row (4th, even parity), then there is no solution (this is the example shown in the text). [This last bit I had to do some research to find...it hadn't occurred to me to use the row parity in conjunction with the inversion parity.]

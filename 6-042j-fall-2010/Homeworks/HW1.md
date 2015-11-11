@@ -106,6 +106,8 @@ is rational.
 
 $$\Box$$
 
+Theorem 2.3.2 from the class reading is an almost-identical proof.
+
 ## Problem 6
 Prove
 $$\forall w,x,y \in \Bbb{N}, w^2 + x^2 + y^2 = z^2 \in \text{ even } \Leftrightarrow w,x,y \in \text{ even.}$$

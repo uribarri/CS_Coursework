@@ -95,3 +95,57 @@ Then the "tiling the courtyard" (a $2^n \times 2^n$ region) using L-shaped tiles
 The Invariant Method is used to demonstrate that certain propositions are invariant, and is important for the verification of software. It is essentially inductive, as long as $P(t)$ is chosen such that it is the invariant to be demonstrated.
 
 There is a lovely proof of the (un)solvability of the 8-puzzle ending on p. 64 of the notes. The 15-puzzle, which is left as an exercise for readers, is solved by the same method: working out the parity of the number of *inversions* in the puzzle. Where for the 8-puzzle the number was always $0, \pm 2$, in the 15-puzzle it's always $\pm 1, \pm 3$. The parity of inversions is conserved in the 8-puzzle case. In the 15-puzzle case, the inversion parity is added to the parity of the empty square row position, and the total parity is conserved in all moves. So if the inversion parity is odd, and the empty square is on the bottom row (4th, even parity), then there is no solution (this is the example shown in the text). [This last bit I had to do some research to find...it hadn't occurred to me to use the row parity in conjunction with the inversion parity.]
+
+## Lecture 3
+### Seven characteristics of good proofs
+  1. Correct
+  2. Complete
+  3. Clear
+  4. Brief   - Not always there...
+  5. Elegant - This is not my strength, so far
+  6. Well-organized - using lemmas, etc.
+  7. In order
+
+1/3 of all published proofs have errors, according to one estimate!
+
+Gauss published the first proof of the Fundamental Theorem of Algebra.
+
+### Top-10 bad proof methods
+  1. Proof by kitchen sink
+  2. Proof by example
+  3. Proof by vigorous hand waving
+  4. Proof by cumbersome notation
+  5. Proof by exhaustion
+  6. Proof by omission
+  7. Proof by picture
+  8. Proof by vehement assertion
+  9. Proof by appeal to intuition
+  10. Proof by reference to eminent authority
+
+Fermat's last theorem: $\forall n > 2$, $\neg \exists x,y,z \in \Bbb{N}^+ |  x^n + y^n = z^n$. The proof does not fit in the margins of a book.
+
+...Most of this lecture was dedicated to the 8-puzzle, which I did the reading about last night, so no detailed notes.
+
+Invariants are an important notion for verifying that certain states can't occur in software.
+
+### Strong Induction
+#### Strong Induction axiom
+Let $P(n)$ be a predicate. If $P(0)$ is true, and $\forall n$ $P(0) \wedge P(1) \wedge P(2) ... \wedge P(n) \Rightarrow P(n+1)$ is true, then $\forall n$ $P(n)$ is true.
+
+#### 8-block game
+Stack of 8 blocks. Separated into 2 stacks, $8 \rightarrow (5,3)$ gives 15 points. Then $5 \rightarrow (4,1)$ gives 4 points. Continue until 8 stacks of 1. Goal is to maximize number of points gotten during process. No matter how the game is played, the final score is 28.
+
+Strong induction was used to demonstrate not that the score is invariant, but that the score is $S(n)=\frac{n(n-1)}{2}$...the stronger hypothesis was necessary to make the induction do-able.
+
+#### To do at this stage
+~~Recitation 4~~ and Homework 2 will be due before the start of next lecture (#4, on Number Theory). (I may put off Recitation 4 until the start of Lecture 5. When I did Recitation 3, I hadn't yet gotten to strong induction, but the solution of one of those problems was best done by strong induction. So I may need to introduce a lag.
+
+#### From the reading
+**Structural Induction** is used to prove properties of recursively-defined data types in computer science. Arithmetic expressions are examples of recursively-defined data types, as are sequences of brackets.
+
+If a data type is *ambiguous* (where an element can be constructed in more than one way) then (recursively-defined) function definitions must be careful not to be ill-defined (producing more than one value for the same element constructed two different ways). Example from matching brackets is given.
+
+Some examples of ill-defined recursive function definitions are given. In general, anything where $f(n)$ is defined in terms of $f(n>m)$ is suspect, though in pathological cases it can work out if there is another part of the definition pointing to an $f(k<n)$.
+
+#### This ends the lecture and reading notes on proofs and induction.
+Homework through 2 and Recitations through 3 should be done now.

@@ -237,7 +237,7 @@ $\gcd (n,k)=1 \iff k$ has a multiplicative inverse. [There is a ton of back and 
 [That theorem was incredibly complicated. I may have to watch this over after doing the reading.]
 
 #### Fermat's Little Theorem
-Suppose $p$ is prime. If $k \in {1,2,...p-1}$ then $k^{p-1} \equiv 1 \mod n$. Then $k^{-1} \equiv k^{p-2} mod p$.
+Suppose $p$ is prime. If $k \in {1,2,...p-1}$ then $k^{p-1} \equiv 1 \mod n$. Then $k^{-1} \equiv k^{p-2} \mod p$.
 
 #### RSA algorithm
 Receiver creates public and private keys.
@@ -250,3 +250,30 @@ Receiver creates public and private keys.
 Encryption: $m' = rem(m^e,n)$.
 
 Decryption: $m = rem((m')^d,n)$.
+
+### From the reading
+
+**Fundamental theorem of Arithmetic**:
+A number $n$ can be built up in one unique way as a product of primes $p_1p_2...p_j$.
+
+`The Prime Number Theorem:` $\lim_{x\rightarrow\infty} \pi(x) = x/ \ln x$.
+
+In $a \equiv b \mod n$ a new congruence is found every $n$ integers. It's like equality on a number line that folds back onto itself and is $n$ long. Another way to think of it is that the $\mod n$ operation partitions the number line into $n$ sets of congruent numbers.
+
+Did the [Polish Cipher Bureau](http://en.wikipedia.org/wiki/Polish_Cipher_Bureau) actually exist?
+
+In public-key crypto, the message must be shorter than the public key (that is, $0 \leq m < p$). The private key is also shorter: $0 \leq k < p$...and the message $m$ no longer needs to be a prime.
+
+Generally, cancellation does not work in congruences in modulo arithmetic. On the other hand, they do work in the special case of modulo a prime.
+
+The Turing encryption algorithm discussed in the text *permutes* all possible messages; that is, the procedure shuffles the set of all messages $0 \leq m < p$. The original message still exists somewhere in the shuffling; but only knowledge of the secret key $k$ reveals where it is.
+
+Turing's last public project was a mechanical device to test the Riemann Hypothesis.
+
+Arithmetic on with arbitrary modulus $n$ is still tractable if considering terms $k$ that are *relatively prime* to $n$. In particular, the note above about permutation of messages still holds true if the only values of $k$ in the sequence considered are *relatively prime* to one another.
+
+Just as $k^{p-1} \equiv 1 \mod p$ for a prime $p$, for an arbitrary $n$ $k^{\phi(n)} \equiv 1 \mod n$ where $\phi(n)$ is the Euler totient function, $\phi(n) = \Pi_0^r (p_j-1)$ is the number of relative primes to $n$ less than $n$. The prime case is just a special case of the general.
+
+When $n$ is a product of large primes, factorization becomes difficult and the Pulverizer is a better bet for finding the inverse of a key.
+
+THe RSA algorithm cleverly chooses its definitions for the public and private keys so that the decryption process works out. The important point is that everything can be derived from the large primes $p$ and $q$ that are chosen; $p$ and $q$ are hard to derive from $e$ and $n$ but are easy to derive from $d$ and $n$, which is why the secret key must be kept secret.

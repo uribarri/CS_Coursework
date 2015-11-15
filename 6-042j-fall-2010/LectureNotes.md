@@ -272,7 +272,7 @@ Turing's last public project was a mechanical device to test the Riemann Hypothe
 
 Arithmetic on with arbitrary modulus $n$ is still tractable if considering terms $k$ that are *relatively prime* to $n$. In particular, the note above about permutation of messages still holds true if the only values of $k$ in the sequence considered are *relatively prime* to one another.
 
-Just as $k^{p-1} \equiv 1 \mod p$ for a prime $p$, for an arbitrary $n$ $k^{\phi(n)} \equiv 1 \mod n$ where $\phi(n)$ is the Euler totient function, $\phi(n) = \Pi_0^r (p_j-1)$ is the number of relative primes to $n$ less than $n$. The prime case is just a special case of the general.
+Just as $k^{p-1} \equiv 1 \mod p$ for a prime $p$, for an arbitrary $n$ $k^{\phi(n)} \equiv 1 \mod n$ where $\phi(n)$ is the Euler totient function, $\phi(n) = \prod_0^r (p_j-1)$ is the number of relative primes to $n$ less than $n$. The prime case is just a special case of the general.
 
 When $n$ is a product of large primes, factorization becomes difficult and the Pulverizer is a better bet for finding the inverse of a key.
 

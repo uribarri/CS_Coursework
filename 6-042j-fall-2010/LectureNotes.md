@@ -149,3 +149,104 @@ Some examples of ill-defined recursive function definitions are given. In genera
 
 #### This ends the lecture and reading notes on proofs and induction.
 Homework through 2 and Recitations through 3 should be done now.
+
+## Lecture 4
+Number theory is one of the oldest mathematical sciences: it is the study of integers.
+
+The class starts with the jug demonstration from Die Hard 3.
+
+$m | a$: "m divides a", which means that $mk = a$ for some $k$.
+
+Any amount of water in the jug game that can be created from two jugs of capacity $a,b$ is a multiple of the greatest common divisor of $a,b$.
+
+**Definition.** $a,b$ are relatively prime if their GCD is $1$.
+
+### Euclid's Algorithm (or The Pulverizer)
+$\forall b > a \exists$ unique $q$ and $r$ (quotient and remainder) such that $b=qa + r$ with $0 \geq r < a$.
+
+**Lemma.** $\text{gcd}(a,b) = \text{gcd}(\text{rem}(b,a),a)$.
+
+Now the algorithm: $\text{gcd}(a,b) = \text{gcd}(\text{rem}(b,a),a)$ and do this with the result until the process stops changing the answer.
+
+$\text{gcd}(a,b)$ is a linear combination of $a,b$.
+
+Notes really sparse here because I was distracted while watching and needed to watch it quickly. I also had already read most of the relevant reading and so not much was surprising to me.
+
+### From the reading
+The Pulverizer is the same as Euclid's algorithm, except the methods of forming each remainder are kept track of during the procedure. In that way, the linear combination that forms the GCD can be easily computed at the end. The Pulverizer is an Indian name (*kuttak*), since it was developed in ancient India.
+
+## Lecture 5
+Encryption: keys are exchange, then
+  * $m' = E_e(m)$
+  * $m = E_d(m')$
+
+### Turing's code V1
+Now to encrypt "victory". $m = 220903201515182513$ is the concatenation of all the integers representing the letter positions in the alphabet. A $13$ is added on the end to make the number prime (how we know that is not given in lecture).
+
+Beforehand, exchange keys (secret primes $k$). $m' = E_k(m) = mk$. Decryption is the reverse (this is obviously not public-key crypto that's being described). But anyway, now $m'$ is the product of two very large prime numbers. It's hard to factor a product of two large prime numbers.
+
+In this scheme, if someone intercepts two messages with the same key, they can find the GCD of the two messages and that is the key. $k = \gcd(m'_1,m'_2)$. This is not secure.
+
+### Turing's code V2
+Beforehand, exchange a public prime $p$ and a secret prime $k$.
+
+#### Encryption
+The message is represented as a number $m \in {0,1,...p+1}$ and $m' = \text{rem}(mk,p)$.
+
+#### Decryption
+$a,b$ are relatively prime iff $\gcd (a,b)$ iff $\exists sa + tb = 1$
+
+**Definition.** $x$ is congruent to $y$ modulo $n$: $x\equiv y \mod n \iff n | (x-y)$.
+
+*Ex. 1* $31 \equiv 16 \mod 5$
+
+**Definition.** Multiplicative inverse of $x \mod n$ is a number $x^{-1} \in {0,1,...n-1}$ such that $x x^{-1} \equiv 1 \mod n$
+
+*Ex. 2* $2\cdot 3 \eqiv 1 \mod 5$, or $2 \equiv 3^{-1} \mod 5$, or $3\equiv 2^{-1} \mod 5$.
+
+$$5 \cdot 5 \equiv 1 \mod 6 \Rightarrow 5 \equiv 5^{-1} \mod 6$$
+
+Now back to the Turing code...
+
+$$m' = \text{rem}(mk,p) \equiv mk \mod p$$
+
+If $k k^{-1} \equiv 1 \mod p$, then $m' k^{-1} \equiv mk k^{-1} \equiv m \mod p. Since $m \in {0,1,..p-1}$, then $m \text{rem}(m' k^{-1},p)$.
+
+How to attack this? The known-plaintext attack. Assume $m$ and $m'$ are known. Since $m' = \text{rem}(mk,p)$ or $m' \equiv mk \mod p$, and both are prime, $\gcd (m,p) = 1$.
+
+Compute $m^{-1} \mod p$. Knowing $m$ and $p$ allows calculation of $m^{-1}$ which gives $k m m^{-1} \equiv k \mod p$. Compute then $k^{-1} \mod p$; that can be used to decrypt any other message.
+
+So Turing code is too simple. Next, move on to RSA.
+
+### RSA
+
+#### Euler' Totient Function.
+$\phi(n)$ denotes the number of integers $\in {1,2,...n-1}$ that are relatively prime to $n$.
+
+Example: $n=12$. The relatively prime numbers are $(1,5,7,11)$, so $\phi(12)=4$. $\phi(15) = 8$ (not all of which are prime!)
+
+#### Euler's Theorem
+If $\gcd(n,k)=1$, then $k^{\phi(n)} \equiv 1 \mod n$.
+
+**Lemma 1.** If $\gcd (n,k) = 1$ then $ak \equiv bk \mod n \Rightarrow a \equiv b \mod n$.
+
+$\gcd (n,k)=1 \iff k$ has a multiplicative inverse. [There is a ton of back and forth in this proof. Better to try to follow it in the reading later.]
+
+**Lemma 2.** Suppose $\gcd (n,k) =1 $, then let $k1...kr$ be the integers relatively prime to $n$ ($r = \phi(n)$). Then set of remainders of ${kk_r}$ with $n$ is the set $k_r$. Cardinality of set of ${k_r}$ is $r$.
+
+[That theorem was incredibly complicated. I may have to watch this over after doing the reading.]
+
+#### Fermat's Little Theorem
+Suppose $p$ is prime. If $k \in {1,2,...p-1}$ then $k^{p-1} \equiv 1 \mod n$. Then $k^{-1} \equiv k^{p-2} mod p$.
+
+#### RSA algorithm
+Receiver creates public and private keys.
+  1. Generate distinct primes $p$, $q$.
+  2. Let $n=pq$
+  3. Select e, $\gcd (e,(p-1)(q-1)) = 1$. Public key is $(e,n)$
+  4. Secret key is $d$, $de \equiv 1 \mod (p-1)(q-1)$.
+  5. Secret key is $(d,n)$.
+
+Encryption: $m' = rem(m^e,n)$.
+
+Decryption: $m = rem((m')^d,n)$.

@@ -71,4 +71,4 @@ which means that $3 | N^+$.
 
 Based on the way this question is worded, and the well-known fact that 9 has an analogous rule to 3, but other powers of 3 don't...I'm left wondering if this is a trick question and I will go to the solutions to find out.
 
-No, it wasn't a trick. The solutions just figured out a way to express the $3^{n+1}$ digits as a multiplication of the $3^n$ digits and something else. And the something else was something like $1000...1000..1$, so that one is left with the $3^{n+1}$ digits. And that second number, having 3 $1$'s, is divisible by 3. Clever. Perhaps I would have gotten there if I hadn't been suspicious that I was wasting my time.
+No, it wasn't a trick. The solutions just figured out a way to express the $3^{n+1}$ digits as a multiplication of the $3^n$ digits and something else. And the something else was something like $1000...1000..1$, so that one is left with the $3^{n+1}$ digits. And that second number, having 3 $1$'s, is divisible by 3. Clever. Perhaps I would have gotten there if I hadn't been suspicious that I was wasting my time. It was the strategy that I was looking for and had half-developed anyway.

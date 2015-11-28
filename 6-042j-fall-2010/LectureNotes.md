@@ -202,7 +202,7 @@ $a,b$ are relatively prime iff $\gcd (a,b)$ iff $\exists sa + tb = 1$
 
 **Definition.** Multiplicative inverse of $x \mod n$ is a number $x^{-1} \in {0,1,...n-1}$ such that $x x^{-1} \equiv 1 \mod n$
 
-*Ex. 2* $2\cdot 3 \eqiv 1 \mod 5$, or $2 \equiv 3^{-1} \mod 5$, or $3\equiv 2^{-1} \mod 5$.
+*Ex. 2* $2\cdot 3 \equiv 1 \mod 5$, or $2 \equiv 3^{-1} \mod 5$, or $3\equiv 2^{-1} \mod 5$.
 
 $$5 \cdot 5 \equiv 1 \mod 6 \Rightarrow 5 \equiv 5^{-1} \mod 6$$
 
@@ -276,4 +276,116 @@ Just as $k^{p-1} \equiv 1 \mod p$ for a prime $p$, for an arbitrary $n$ $k^{\phi
 
 When $n$ is a product of large primes, factorization becomes difficult and the Pulverizer is a better bet for finding the inverse of a key.
 
-THe RSA algorithm cleverly chooses its definitions for the public and private keys so that the decryption process works out. The important point is that everything can be derived from the large primes $p$ and $q$ that are chosen; $p$ and $q$ are hard to derive from $e$ and $n$ but are easy to derive from $d$ and $n$, which is why the secret key must be kept secret.
+The RSA algorithm cleverly chooses its definitions for the public and private keys so that the decryption process works out. The important point is that everything can be derived from the large primes $p$ and $q$ that are chosen; $p$ and $q$ are hard to derive from $e$ and $n$ but are easy to derive from $d$ and $n$, which is why the secret key must be kept secret.
+
+## Lecture 6
+### Graphs definition
+#### The Sex study
+  * In the US, men have 74% more sexual partners than women (U. Chicago)
+  * Or it's 233%. (ABC News)
+
+#### Graph definitions
+A graph $G = (V,E)$ is a pair of sets, of *vertices* or *nodes* and the *edges* that connect them. The edges are unordered two-node pairs. $E$ can be the empty set. $V$ is non-empty.
+  * Two nodes are *adjacent* if they are connected by an edge.
+  * An edge is *incident* to the vertices it connects.
+  * The *degree* of a node is the number of edges incident to it.
+  * A *simple* graph has no loops or multiple edges.
+
+#### The sex graph
+In the US:
+  * $|V_m| = 147.6M$
+  * $|V_w| = 152.4M$
+  * $|E|$ is unknown
+  * ($|..|$ is called *cardinality* of the graph)
+  * $A_m, A_w$ is the average degree of $V_m,V_w$ respectively.
+  * Want to find $A_m/A_w$ - the analogue of the survey results above
+
+$$A_m = |E|/|V_m|$$
+$$A_w = |E|/|V_w|$$
+$$A_m/A_w = |V_w|/|V_m| = 1.0325$$
+
+#### Scheduling final examples
+A graph represents which courses can't have their exams at the same time. Certain slots are available for giving exams. This is a "graph coloring problem".
+
+#### Graph coloring
+Given a graph $G$ and $k$ colors, assign a color to each node so that adjacent nodes do not have the same color. This must be named after the map problem. The minimum value of $k$ for which such a coloring exists is called the *chromatic number* of the graph $\chi(G)$
+
+#### Determining a chromatic number
+The chromatic number of the example given is $\chi(G) = 3$. The problem of determining it is an exponentially-hard problem. Checking possible solutions is easy. It is an NP-complete problem. Finding solution to one NP-complete problem will solve all the rest.
+
+Practical algorithms to do this, used in practice (Basic Graph-Coloring Algorithm):
+  1. Order the nodes $V_1, V_2,...V_n$
+  2. Order the colors $C_1,C_2,...C_m$
+  3. Color the nodes in order using the lowest-possible legal colorings.
+  4. Different orderings lead to different number of colorings
+  5. Better orderings are done by sorting nodes by degree.
+  6. More sophisticated orderings lead to better colorings.
+
+Basic Algorithm above is a "greedy" algorithm: simple, getting done quickly without worrying about efficiency.
+
+**Theorem.** If every node in graph $G$ has at most degree $D$, then the Basic Algorithm above uses at most $D+1$ colors regardless of ordering.
+
+*Proof*. By induction. Induct on $N$, the number of nodes.
+
+Base case: $N = 1$ node, 0 edges has degree 0. 1 color can be used for 1 node, so $D+1$ is true.
+
+Inductive step. Let $G$ be *any* $N+1$ node graph. Let $d$ be the largest degree in $G$. Order nodes $V_1,V_2,...V_n,V_{n+1}$. Remove last node and all edges incident on it to create $G'$. $G'$ still has max degree $d$, but $N$ nodes. By assumption, $P(n)$ is true (at most $d+1$ colors to color $G'$.) Put $V_{n+1}$ back into graph. It has at most $d$ neighbors, and therefore at least one color in the $d+1$ set is not used and can be given to $V_{n+1}$. $\Box$
+
+(Sidebar: an $n$-node complete graph $K_n$ is a special graph in which all nodes are connected to each other.)
+
+An example *bipartite graph* ($G$ is bipartite if the vertices can be split into a left and right set so that all edges connect a node in the left set to a node in the right set) was shown that does well and poorly with Basic Algorithm depending on how node ordering is done.
+
+Some examples of graph problems were given---scheduling is almost universally a graph problem, the use of registers for variables in computer programs...
+
+#### Communications problem
+If two radio towers have overlapping ranges, they can't use the same frequency.
+
+### From the reading
+All the graphs being discussed here are *simple graphs* as defined above.
+
+Along with $K_n$, there are $L_n$ (line graph) and $C_n$ (cycle graph) that connect nodes in sequence.
+
+Graph isomorphism: a fancy way to say "looks the same"...two graphs $G_1(V_1,E_1)$ and $G_2(V_2,E_2)$ are isomorphic iff $\exists$ a bijection $f: V_1 \rightarrow V_2$ such that $\{u,v\} \in E_1 \iff \{f(u),f(v)\} \in E_2$. $f$ is an *isomorphism*. This is equivalent to saying that graphs are isomorphic if their only difference is a relabeling of the vertices. Is the problem of finding isomorphisms in P or NP? No one knows yet.
+
+
+## Lecture 7
+### Matching problem
+Given a graph $G(V,E)$, a matching is a subgraph of $G$ where every node has degree 1. For example, with a graph showing "preferences", finding a set of one-to-one preferences is a *matching*. A *perfect matching* is one that has size $N/2$.
+
+A *weighted graph* would be used when there are more- and less-desirable preferences. The weight of a matching is the sum of the weights of the edges. Generally the higher the weight, the lower the desirability, so the goal is to minimize the weight of the matching. Finding maximum matching and or min-weight perfect matchings are not NP-complete.
+
+#### Stable Marriage problem
+Another way to order edges is to order preferences rather than assign weights.
+
+Given a matching $\mathcal{M}$, $x,y$ is a *rogue* couple if they prefer each other over their mates in $\mathcal{M}$. A matching is stable if there are no rogue couples. The goal is to find a perfect, stable matching.
+
+Given $N$ boys, $N$ girls. Each boy has his own ranked preference list of girls. Each girl has the same list for boys. Find a perfect, stable matching.
+
+First attempt to solve example problem is by greedy algorithm without special ordering of boys.
+
+The Marriage Algorithm produces a stable, complete matching and it terminates. Also want to show that it runs quickly. Also fairness: better to be boy or girl?
+
+**Theorem.** TMA terminates in at most $N^2 + 1$ steps. Claim: if one step doesn't terminate, a boy must cross a girl off his list (because he got rejected). $N$ lists, with $N$ names, mean at most there can be $N^2$ crossouts. Then the algorithm must stop.
+
+An invariant: a girl's preference for her chosen boy can only increase with passing steps. If she rejects a boy $B$, it's because she now has a suitor she prefers to $B$. True on Step 0. On Step $D+1$, the suitor only changes if someone better comes along.
+
+**Theorem.** Everyone is married. Prove by contradiction. WLOG, $B$ is not married. Then all girls must have someone better than B. But that implies every boy is married. Contradiction. $\Box$
+
+**Theorem.** TMA produces a stable matching. Prove by contradiction. Let $(B,G)$ be not married. Case 1: $G$ rejected $B$. So she has someone better. She won't prefer him. Case 2: $B$ never courted $G$. So he married someone he prefers. $(B,G)$ can not be a rogue couple. $\Box$
+
+A person's *optimal* mate is their favorite within their *realm of possibility*. The least-favorite is the *pessimal*.
+
+**Theorem.** TMA marries every boy with his optimal mate. TMA marries every girl with her pessimal mate.
+
+### From the reading
+**Handshake Lemma.** The sum of the degrees of the vertices in a graph equals twice the number of edges.
+
+Another way to say that a *matching* exists in a graph is to say that no two edges share a node. A matching *covers* a set of vertices if each vertex has an edge incident on it. A *perfect* matching covers all vertices in a graph.
+
+In a bipartite graph with $|L| \leq |R|$, a matching covering $L$ is guaranteed if the graph is degree-constrained.
+
+In a *regular* graph every node has the same degree. Every regular bipartite graph has a perfect matching.
+
+A planar graph is 4-colorable. This must imply that there are no overlapping edges, since I can easily envision a non-4-colorable graph, but only one with overlapping edges.
+
+A graph with maximum degree $k$ is is $(k+1)$-colorable.

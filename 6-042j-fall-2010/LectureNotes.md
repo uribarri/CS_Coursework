@@ -389,3 +389,49 @@ In a *regular* graph every node has the same degree. Every regular bipartite gra
 A planar graph is 4-colorable. This must imply that there are no overlapping edges, since I can easily envision a non-4-colorable graph, but only one with overlapping edges.
 
 A graph with maximum degree $k$ is is $(k+1)$-colorable.
+
+## Lecture 8
+### Walks & Paths
+Def:A *walk* is a sequence of vertices connected by edges. The length of a walk is equal to the number of edges.
+
+Def: A *path* is a walk in which all vertices of the walk are different.
+
+**Lemma.** If $\exists$ a walk from $u$ to $v$, also $\exists$ a path from $u$ to $v$. The proof rests on the Well-Ordering Principle, and asserting that there exists a walk of minimal length. Which is a path.
+
+Def: $u$ and $v$ are connected if there is a path from $u$ to $v$.
+
+Def: a graph is connected if every pair of vertices in the graph is connected.
+
+### Cycles and closed walks. Trees.
+Def: a *closed walk* is one in which the start and end vertex are the same.
+
+Def: a *cycle* is a closed walk in which every edge is different (for $k \geq 3$).
+
+A *tree* is both connected, and has no cycles. Def: a connected and acyclic graph is a tree.
+
+Def: a *leaf* is a node of degree 1.
+
+**Lemma.** A connected subgraph of a tree is also a tree. Proof: if any part of the subgraph has a cycle, that cycle is also present in the original tree, which would therefore not be a tree. Contradiction. $\Box$
+
+**Lemma.** A tree with $n$ vertices has $n-1$ edges. Proof: By induction. Every addition of an edge must add a vertex. A two-vertex tree has one edge. $\Box$
+
+### Spanning Trees
+Def: a spanning tree is a subgraph of a connected graph that touches all vertices and is a tree. For every graph there is such a spanning tree.
+
+### Constructing a minimum-weight spanning tree
+Def: a minimum-weight spanning tree of a graph $G$ is one in which the summed weights of the edges of the tree is minimized.
+
+Algorithm: greedy. Start choosing edges starting with minimum-weight. Keep going as long as no cycles are created. This creates a minimum-weight spanning tree.
+
+### From the reading
+A *connected component* is a subgraph of a graph that consists of a vertex and every other vertex that is connected to it. A connected graph has exactly one connected component.
+
+A $k$-*connected* graph is one in which every pair of vertices is $k$-connected; a pair of vertices is $k$-connected if they remain connected in every subgraph formed by deleting $k-1$ edges. The complete graph $K_n$ is $n-1$-connected.
+
+"Build-up" error is proofs involving graphs is avoided by using the "shrink down, grow back" approach to inducting on edges or vertices.
+
+An *Euler walk* is one that traverses each edge on a graph only once. An *Euler tour* ends up back at the starting vertex. A connected graph has an Euler tour if and only if every vertex has even degree. Hamiltonian *cycles* and *paths* are the same, but on vertices instead of edges. Showing that a graph has a Hamiltonian cycle or path is in the same hardness category as the satisfiability problem. Not so with Euler. If the graph on which the Hamiltonian problem is posed has weighted edges, this becomes the Traveling Salesman Problem.
+
+If every connected component of a graph is a tree, the graph is called a *forest*. Neat.
+
+An *ordered binary tree* is one in which every parent has at most two children, a left and a right.

@@ -435,3 +435,27 @@ An *Euler walk* is one that traverses each edge on a graph only once. An *Euler 
 If every connected component of a graph is a tree, the graph is called a *forest*. Neat.
 
 An *ordered binary tree* is one in which every parent has at most two children, a left and a right.
+
+## Lecture 9
+Communication networks
+
+### Complete binary tree
+*Latency* is the time required for a packet to travel from an input to an output.
+
+The *diameter* of a network is the length of the shortest path between the input and output that are furthest apart. The diameter of the complete binary tree of size $N$ (a power of 2) is $2\cdot (1+\log_2(N))$.
+
+*Switch size* is the number of inputs and number of outputs of a switch (ex: $3\times 3$).
+
+In a binary tree, the number of switches is $2N-1$, $N$ is like above (the number of inputs and outputs (but not the sum of both)).
+
+A *permutation* is a function $\Pi: \{0...N-1\} \rightarrow \{0...N-1\}$ such that no two numbers are mapped to the same value. $\Pi(i) \ \Pi(j) \iff i=j$.
+
+Permutation routing problem: For each $i$, direct the packets at input $i$ to output $\Pi(i)$. The path taken is denoted by $P_{i,\Pi(i)}$. The *congestion* is equal to the number of paths passing through a switch. The maximum congestion is the $\max_{\Pi}...$
+
+The congestion of an $N$-input array is 2.
+
+The binary tree and array network are good and bad on scaling in the parameters (size, diameter, congestion), and need to be combined somehow to get the best of both worlds. The *butterfly* network is one way to do this.
+
+The Benes network, which puts mirror butterfly networks back-to-back, cleverly decreases the congestion to 1. A two-coloring of the constraint graph on the outer network shows that the congestion is always 1.
+
+Very few notes in this lecture; it was a very visual lecture. Maybe more to come in the reading.

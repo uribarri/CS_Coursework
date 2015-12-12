@@ -459,3 +459,8 @@ The binary tree and array network are good and bad on scaling in the parameters 
 The Benes network, which puts mirror butterfly networks back-to-back, cleverly decreases the congestion to 1. A two-coloring of the constraint graph on the outer network shows that the congestion is always 1.
 
 Very few notes in this lecture; it was a very visual lecture. Maybe more to come in the reading.
+
+### From the reading
+A *directed graph* is one in which the edges have direction. The adjacency matrix, which was symmetric in the case of an undirected graph, is not symmetric for a directed graph. Degree splits into *indegree* and *outdegree* (with obvious meanings); nodes with indegree 0 are *sources*, and those with outdegree 0 are *sinks*. Directed graphs can be strongly connected and weakly connected, and walks, paths, closed walks, and cycles all must follow the directionality of the edges.
+
+In *tournament graphs*, the directed edges represent who won a competition among the competitors (nodes). Every tournament graph contains a directed Hamiltonian path.

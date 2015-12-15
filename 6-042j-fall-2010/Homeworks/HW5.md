@@ -77,8 +77,24 @@ I drew the graph in a separate document (PDF attached)
 The diameter of the graph is 2. The shortest walk between any two nodes is the first $k$ for which $a_{ij}^k > 0$, where $A$ is the adjacency matrix. For the given adjacency matrix, $a_{ij}^2 > 0 \,\, \forall i,j$.
 
 ### ( c )
-A cycle is a closed walk in which ends at its beginning node and for which *all other nodes visited are distinct*. Therefore the longest cycle cannot be any greater than the number of nodes, 6 in this case.
+A cycle is a closed walk in which ends at its beginning node and for which *all other nodes visited are distinct*. Therefore the longest cycle cannot be any greater than the number of nodes (plus 1), 7 in this case.
 
-Determining whether there is a maximal cycle is the problem of determining if the graph is Hamiltonian.
+Determining whether there is a maximal cycle is the problem of determining if the graph is Hamiltonian. Not sure if there is supposed to be an algorithm for it...but after looking at the graph for a moment the cycle $\{3,4,2,1,6,5,3\}$ popped out at me. This is a Hamiltonian cycle, and is the maximum length cycle in the graph.
+
+With some forethought, the graph can be drawn with the vertices in a big circle in the order in which they appear in the Hamiltonian cycle. That would make the cycle obvious. In hindsight, mine was close to that, which is probably why the cycle jumped at me so quickly.
+
+### (d)
+The maximum degree in the graph is 4, and the graph is therefore at worst 5-colorable.
+
+Just try something first: Let $(v,C)$ be a coloring of vertex $v$. So assign first $(1,R)$; then since 1 does not connect to 5, also assign $(5,R)$. Now choose a different color for 2: $(2,B)$. 3 does not connect to 2, so assign also $(3,B)$. A third color for 4: $(4,Y)$; and can also do $(6,Y)$. This gives a 3-coloring.
+
+The graph is not bipartite, and is therefore not 2-colorable. Therefore a 3-coloring is a minimum coloring. (The graph is in fact tripartite. An $n$-partite graph is at most $n$-colorable.)
 
 ## Problem 6
+This problem shows that in any graph, a vertex of odd degree is connected to at least one other vertex of odd degree.
+
+### (a)
+$v$ is an odd degree node. Any longest walk that starts on $v$ that doesn't repeat any edges must end not on $v$. That is because in leaving $v$, an odd number of edges (incident to $v$) has been traversed, and on returning an even number has been traversed. Any walk that ends on $v$ must have traversed an even number of edges; but since there is an odd number of edges incident to $v$, a longer walk can always be formed by traversing one more edge and leaving $v$. The final node $w \not= v$.
+
+### (b)
+The final node $w$ is the final node only because the walk cannot continue (there are no edges incident to $w$ that have not already been traversed). $w$ is entered, in the first instance, by traversing one edge; if $w$ is left, a second (even-numbered) edge is traversed. On entering $w$, an odd-numbered edge is always traversed; therefore, if the walk ends on $w$, $w$ must be of odd degree.

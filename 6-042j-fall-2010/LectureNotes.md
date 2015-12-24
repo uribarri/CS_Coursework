@@ -464,3 +464,89 @@ Very few notes in this lecture; it was a very visual lecture. Maybe more to come
 A *directed graph* is one in which the edges have direction. The adjacency matrix, which was symmetric in the case of an undirected graph, is not symmetric for a directed graph. Degree splits into *indegree* and *outdegree* (with obvious meanings); nodes with indegree 0 are *sources*, and those with outdegree 0 are *sinks*. Directed graphs can be strongly connected and weakly connected, and walks, paths, closed walks, and cycles all must follow the directionality of the edges.
 
 In *tournament graphs*, the directed edges represent who won a competition among the competitors (nodes). Every tournament graph contains a directed Hamiltonian path.
+
+## Lecture 10
+I'm suspecting that Lectures 9 and 10 are out of order...in that at the beginning of Lecture 10 the instructor refers to "next week" doing things that sound a lot like "communication networks"...and so much that is covered in Lecture 10 has already been covered in reading notes to this point. So notes may be sparse.
+
+Euler walks and tours
+
+Directed graphs, connectivity, and adjacency matrices
+
+Tournament graphs and chicken kings
+
+...and, by the end of the lecture, my initial assumption proved true.
+
+## Lecture 11
+### Relations
+A relation from $A$ to $B$ is a subset of $A\times B$. The relation in particular is the *reason* why particular components of $A$ and $B$ are paired. The relation is given $aRb$ or $a\backsim b$.
+
+In the relation notation, $\backsim$ is a generic symbol that can represent all kinds of relations: $=$, $\equiv$, $|$, $\leq$, etc...
+
+A set $A$ with a relation $R$ is a directed graph. In particular, $G(V,E)$ with $V=A$ and $E=R$.
+
+Properties of relations:
+  * reflexive if $xRx$ $\forall x \in A$.
+  * symmetric if $xRy \implies yRx$ $\forall x,y$.
+  * antisymmetric if $xRy \wedge yRx \implies x=y$.
+  * transitive if $xRy \wedge yRz \implies xRz$.
+
+Example: $x\equiv y \mod 5$, $x|y$, $x \leq y$.
+  1. Reflexive; symmetric; not antisymmetric; transitive.
+  2. Reflexive; not symmetric; antisymmetric; transitive.
+  3. Reflexive; not symmetric; antisymmetric; transitive.
+
+Example 1 is prototypical of *equivalence relations*; examples 2 and 3 are representative of *partial orders*.
+
+### Equivalence relations
+are relations that are reflexive, symmetric, and transitive
+
+Example: $=$; $\equiv \mod n$;
+
+The equivalence class of $x \in A$ is the set of all elements in $A$ that are related to $x$ by $R$. Denoted $[x] = \{y | x R y\}$.
+
+Example: $x \equiv y \mod 5$. $[7] = \{...,-3,2,7,...\}$
+
+A *partition* of $A$ is a collection of disjoint, nonempty sets whose union is $A$.
+
+**Theorem.** The equivalence class of an equivalence relation on a set $A$ form a partition of $A$.
+
+### Partial orders
+A relation is a (weak) partial order if reflexive, antisymmetric, and transitive. A (strong) partial order is irreflexive.
+
+A partial order relation is denoted $\preceq$. Reminiscent of the ordering that the elements ofsuch a relation have.
+
+The pair $(A,\preceq)$ is a partially-ordered set or poset. Can be described by a directed graph. Vertices $A$ and edges $\preceq$.
+
+The partial relations are kind of like an ordering, the way that the order of clothes being put on matters. Often represented by a Hasse diagram. Transitivity is true; antisymmetric; and reflexive.
+
+The *Hasse diagram* for a poset $(A,\preceq)$ is a directed graph with vertices $A$ and edge set $\preceq$ minus self loops and edges implied by transitivity. It is a directed, acyclic graph.
+
+A poset has no cycles. Proven by contradiction using transitivity and showing that a loop violates antisymmetry. Two elements are incomparable if they are not related to each other in any way (right and left sock in the example).
+
+A *total order* is a partial order in which all the elements are comparable.
+
+A total order consistent with a partial order is a *topological sort*. The topological sort has the same set of elements but $\preceq \subset \preceq_T$.
+
+Every finite poset has a topological sort.
+
+### From the reading
+The image of the domain of a relation $R$ is the *range* of $R$.
+
+The composition of two relations $S: A \rightarrow B$ and $R: B \rightarrow C$ is $R \circ S: A \rightarrow C$ provided that suitable elements of $B$ exist.
+
+The multiplication of two relations operates on elements of the Cartesian product of the two sets on which the relations are defined sets.
+
+Vocabulary to remember: *is a function* and *total* apply to the *left* side of the bipartite graph representing the relation; *surjective* and *injective* relate to the *right* side of the graph; and *bijective* refers to both.
+
+The *cardinality* of a set $|A| \in \mathbb{N}$ is the number of elements in the set.
+  * If $\exists$ surjection, then $|A| \geq |B|$
+  * If $\exists$ injection, then $|A| \leq |B|$
+  * If $\exists$ bijection; then $|A| = |B|$
+
+A poset has no directed cycles except self-loops. The transitivity and asymmetry property determines that.
+
+A Hasse diagram is the DAG corresponding to a poset with all edges implied by transitivity removed.
+
+A poset can be represented as a DAG and separated into parallel paths. Any sequence of increasing (with respect to $\preceq$) elements is a *chain*. The longest chain in a DAG is the *critical path*. Never thought I'd see that term show up somewhere rigorous.
+
+An *antichain* in a poset is a set of elements in which any two are incomparable. If the critical path in any poset is of length $t$, then the poset can be partitioned into $t$ antichains.

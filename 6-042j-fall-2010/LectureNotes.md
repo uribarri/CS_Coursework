@@ -571,3 +571,34 @@ Example: $f(i) = \sqrt{i}$. $\int_1^n \sqrt{x} dx = \frac23 (n^{3/2}-1)$. $f(1) 
 $$\sum_{i=1}^n \sqrt i \sim \frac23 n^{3/2}$$
 
 **Definition** $h(x) \sim g(x)$ if $\lim_{x\rightarrow\infty}h(x)/g(x) = 1$
+
+## Lecture 13
+### The last word on sums
+The $n$th *Harmonic number* is
+$$H_n = \sum_{i=1}^{n} \frac 1i$$
+
+$$H_n \sim \ln n$$
+
+### Products
+$$n! = \prod_{i=1}^{n} i$$
+$$\ln n! = \sum_{i=1}^{n} \ln i \approx n \ln n - n + 1$$
+$$\frac{n^n}{e^{n-1}} \leq n! \leq \frac{n^{n+1}}{e^{n-1}}$$
+
+Which takes us back to Stirling's formula:
+$$n! = \left(\frac ne\right)^n \sqrt{2\pi n} \mathrm{e}^{\epsilon(n)}$$
+where
+$$\frac{1}{12n+1} \leq \epsilon(n) \leq \frac{1}{12n}$$
+
+### Asymptotic notation
+Five different ways to describe function growth in the limit.
+
+  * $f(x) \sim g(x)$ if $\lim_{x\rightarrow \infty} f(x)/g(x) = 1$
+  * $f(x) = O(g(x))$ if $\lim_{x\rightarrow \infty} f(x)/g(x) < \infty$ (finite) [formally, $f(x) \in O(g(x))$]
+  * $f(x) = \Omega(g(x))$ if $\lim_{x\rightarrow \infty} f(x)/g(x) > 0$
+  * $f(x) = \theta(g(x))$ iff $f(x) = O(g(x)) \wedge f(x) = \Omega(g(x))$
+  * $f(x) = o(g(x))$ means $f(x)$ grows strictly slower than $g(x)$
+  * $\omega$ means the opposite of $o$8
+
+Some of these notations are completely different than how I learned to use them in engineering!
+
+For proofs, $O$-notation (or any asymptotic notation) can never be used in a predicate!

@@ -550,3 +550,24 @@ A Hasse diagram is the DAG corresponding to a poset with all edges implied by tr
 A poset can be represented as a DAG and separated into parallel paths. Any sequence of increasing (with respect to $\preceq$) elements is a *chain*. The longest chain in a DAG is the *critical path*. Never thought I'd see that term show up somewhere rigorous.
 
 An *antichain* in a poset is a set of elements in which any two are incomparable. If the critical path in any poset is of length $t$, then the poset can be partitioned into $t$ antichains.
+
+## Lecture 12
+### The Annuity Problem
+The lecture starts with the annuity problem: what is a future cash flow worth in present dollars? This is the sum of a geometric series:
+$$V = m \sum^{n-1}_{i=0} \left(\frac{1}{1+p}\right)^i$$
+
+#### The perturbation method
+Finding closed forms of sums can be done by "perturbing" (multiplying, differentiating, etc) the sum, and then adding it back in, looking for massive cancellations. In the geometric series, for example, $S - xS = 1-x^n$.
+
+Differentiating is technically part of the "derivative method".
+
+### Placing bounds on sums
+#### Integral bounds
+Take
+$$f(1) + \int_1^n f(x) dx \leq \sum_{i=1}^n f(i) \leq f(n) + \int_1^n f(x) dx$$
+where $f(x)$ is a positive increasing function.
+
+Example: $f(i) = \sqrt{i}$. $\int_1^n \sqrt{x} dx = \frac23 (n^{3/2}-1)$. $f(1) = 1$; $f(n) = \sqrt n$. For $n=100$, the sum is between 667 and 676. In order of magnitude:
+$$\sum_{i=1}^n \sqrt i \sim \frac23 n^{3/2}$$
+
+**Definition** $h(x) \sim g(x)$ if $\lim_{x\rightarrow\infty}h(x)/g(x) = 1$

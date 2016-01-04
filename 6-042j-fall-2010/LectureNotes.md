@@ -595,7 +595,7 @@ Five different ways to describe function growth in the limit.
   * $f(x) \sim g(x)$ if $\lim_{x\rightarrow \infty} f(x)/g(x) = 1$
   * $f(x) = O(g(x))$ if $\lim_{x\rightarrow \infty} f(x)/g(x) < \infty$ (finite) [formally, $f(x) \in O(g(x))$]
   * $f(x) = \Omega(g(x))$ if $\lim_{x\rightarrow \infty} f(x)/g(x) > 0$
-  * $f(x) = \theta(g(x))$ iff $f(x) = O(g(x)) \wedge f(x) = \Omega(g(x))$
+  * $f(x) = \Theta(g(x))$ iff $f(x) = O(g(x)) \wedge f(x) = \Omega(g(x))$
   * $f(x) = o(g(x))$ means $f(x)$ grows strictly slower than $g(x)$
   * $\omega$ means the opposite of $o$8
 

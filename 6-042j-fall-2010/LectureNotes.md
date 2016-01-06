@@ -597,8 +597,13 @@ Five different ways to describe function growth in the limit.
   * $f(x) = \Omega(g(x))$ if $\lim_{x\rightarrow \infty} f(x)/g(x) > 0$
   * $f(x) = \Theta(g(x))$ iff $f(x) = O(g(x)) \wedge f(x) = \Omega(g(x))$
   * $f(x) = o(g(x))$ means $f(x)$ grows strictly slower than $g(x)$
-  * $\omega$ means the opposite of $o$8
+  * $\omega$ means the opposite of $o$
 
 Some of these notations are completely different than how I learned to use them in engineering!
 
 For proofs, $O$-notation (or any asymptotic notation) can never be used in a predicate!
+
+### From the reading
+I want to remember Stirling's Formula to the better-precision estimate
+$$n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \exp{\frac{1}{12n}}$$
+This should be good to 1 part in 10,000 for $n > 10$. For $n < 10$, just do the dang multiplication.

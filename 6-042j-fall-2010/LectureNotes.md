@@ -607,3 +607,22 @@ For proofs, $O$-notation (or any asymptotic notation) can never be used in a pre
 I want to remember Stirling's Formula to the better-precision estimate
 $$n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \exp{\frac{1}{12n}}$$
 This should be good to 1 part in 10,000 for $n > 10$. For $n < 10$, just do the dang multiplication.
+
+## Lecture 14
+### Towers of Hanoi
+How many moves does it take for an $n$-disc stack? $T_1 = 1$, $T_2 = 3$, $T_3 = 7$...
+
+It's pretty clear that the answer is $T_n = 2T_{n-1} + 1$.
+
+Guess: $T_n = 2^n - 1$. Prove by induction. Also, can "plug and chug"...
+
+### Merge sort
+To sort $n>1$ items (power of two), sort first half, then last half. Then merge the sorted lists.
+
+Dividing the list into two halves requires at most $n-1$ comparisons. Total number of comparisons $T(n) = 2T(n/2) + n-1$. The number of comparisons required in the full recursion is $n \log n - n + 1 \approx \log(n!)$.
+
+### Divide and conquer recurrences
+This has the form $T(x) = \sum a_iT(b_ix + \epsilon_i(x)) + g(x)$ for $x > x_0$. $a_i > 0$, $0 < b_i < 1$, $k$ is fixed, $|\epsilon_i(x)| \leq$....
+
+**Theorem (Akra & Bazzi)**. Set $p$ so that $\sum a_i b_i^p = 1$. Then
+$$T(x) = \Theta\left(x^p + x^p \int_1^x \frac{g(u)}{u^{p-1}}du\right)$$

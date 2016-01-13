@@ -626,3 +626,31 @@ This has the form $T(x) = \sum a_iT(b_ix + \epsilon_i(x)) + g(x)$ for $x > x_0$.
 
 **Theorem (Akra & Bazzi)**. Set $p$ so that $\sum a_i b_i^p = 1$. Then
 $$T(x) = \Theta\left(x^p + x^p \int_1^x \frac{g(u)}{u^{p-1}}du\right)$$
+
+### From the reading
+I was struck that the number of operations for MergeSort is $n \log n - n + 1$, which is Stirling's formula for $\log n!$. Why was this? Some searching connected it to the Shannon entropy and information theory on the information content change as the items in the list go from unsorted to sorted. Fascinating.
+
+## Lecture 15
+### Graduate Student Job Problem
+  * Total # jobs: $m$ fixed over time.
+  * Each prof generates 1 grad/year; new profs produce no students
+  * No retirements, faculty live forever
+
+When are all $m$ jobs filled? We start with 1 prof in year 1. $f(n)$ is number of profs in year $n$.
+  * Year 0: 0
+  * Year 1: 1
+  * Year 2: 1
+  * Year 3: 2
+  * Year 4: 3
+  * Year 5: 5
+
+This is the Fibonacci sequence. $f(n) = f(n-1) + f(n-2)$. 200 BC in India!
+
+### Linear recurrences
+These are of the form $f(n) = \sum a_i f(n-i)$. The upper limit, $d$, is the *order* of the recurrence.
+
+**Solution.** Guess: $f(n) = \alpha^n$. Solve the quadratic equation given by the Fibonacci sequence to get $(1 \pm \sqrt 5)/2$. Any linear combination also works. The coefficients will depend on the boundary conditions. This was the discrete form of a second-order ordinary differential equation. For Fibonacci, it's $(1/\sqrt 5) \phi^n - (1/\sqrt 5) (\phi-\sqrt 5/2)^n$
+
+Solving general linear recurrences is always like solving linear ODEs: generate characteristic equation, get coefficients from boundary conditions, etc.
+
+There are even inhomogeneous variants of these recurrences (anything with a general $g(n)$ in the recurrence) that is solved as in the ODE case. Find the solution to the corresponding homogeneous equation; then add in any particular solution to the inhomogeneous equation.

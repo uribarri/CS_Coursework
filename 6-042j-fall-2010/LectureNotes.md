@@ -654,3 +654,36 @@ These are of the form $f(n) = \sum a_i f(n-i)$. The upper limit, $d$, is the *or
 Solving general linear recurrences is always like solving linear ODEs: generate characteristic equation, get coefficients from boundary conditions, etc.
 
 There are even inhomogeneous variants of these recurrences (anything with a general $g(n)$ in the recurrence) that is solved as in the ODE case. Find the solution to the corresponding homogeneous equation; then add in any particular solution to the inhomogeneous equation.
+
+## Lecture 16
+### Sets
+  * A **set** is an unordered collection of *distinct* elements.
+  * The size or **cardinality** of a set is the number of elements in the set.
+  * A **sequence** is an ordered collection of elements, not necessarily distinct.
+  * A **permutation** of a set is a sequence in which every element occurs exactly once.
+  * The number of permutations of a set of size $n$ is $n!$.
+
+### Functions
+  * A **function** $f: X\rightarrow Y$ is a relation between $X$ and $Y$ such that every element of $X$ is related to exactly one element of $Y$.
+  * A function $f: X \rightarrow Y$ is:
+    * **surjective** if every element of $Y$ is mapped to at least once (onto);
+    * **injective** if every element of $Y$ is mapped to at most once (one-to-one);
+    * **bijective** if every element of $Y$ is mapped to exactly once.
+
+### Mapping Rule
+  * if $f: X \rightarrow Y$ is surjective $\implies |X| \geq |Y|$
+  * if $f: X \rightarrow Y$ is injective $\implies |X| \leq |Y|$
+  * if $f: X \rightarrow Y$ is bijective $\implies |X| = |Y|$
+
+### Generalized Pigeonhole Principle
+If $|X| > k|Y|$ then $\forall f: X \rightarrow Y$, $\exists k+1$ different elements of $X$ mapped to the same element in $Y$.
+
+When $k=1$, this is the Pigeonhole Principle.
+
+A $k$-to-$1$ function $f: X \rightarrow Y$ maps exactly $k$ elements of $X$ to each element of $Y$. For this, there is the **Division Rule** which says that the number of elements in $Y$ must be $|X|/k$.
+
+**Generalized Product Rule.** Let $S$ be a set of length-$k$ sequences. If there are $n_1$ possible first entries, and $n_2$ possible second entries, etc...then $|S| = n_1n_2n_3...n_k$.
+
+**Product Rule.** The product of sets is the set of sequences in which the first element is taken from the first set, second from the second, and so forth. Cardinality of a product set is the product of the cardinalities of the sets.
+
+**Sum Rule.** The cardinality of the union of disjoined sets is the sum of the cardinalities of the sets.

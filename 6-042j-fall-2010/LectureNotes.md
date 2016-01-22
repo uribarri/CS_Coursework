@@ -687,3 +687,16 @@ A $k$-to-$1$ function $f: X \rightarrow Y$ maps exactly $k$ elements of $X$ to e
 **Product Rule.** The product of sets is the set of sequences in which the first element is taken from the first set, second from the second, and so forth. Cardinality of a product set is the product of the cardinalities of the sets.
 
 **Sum Rule.** The cardinality of the union of disjoined sets is the sum of the cardinalities of the sets.
+
+## Lecture 17
+### Inclusion-Exclusion Principle
+For unions of non-disjoint sets.
+
+The general formula is
+$$|A_1 \cup A_2 \cup ... \cup A_n| = \sum_{k=1}^n (-1)^{k+1} \sum_{S \subseteq \{1..n\} s.t. |S| = k} |\cap_{i \in S} A_i|$$
+
+### General counting guidelines
+It is a good idea to count two different ways, to make sure something hasn't been missed.
+
+### Combinatorial proofs
+The trick is to find the right set on which to do two independent countings.

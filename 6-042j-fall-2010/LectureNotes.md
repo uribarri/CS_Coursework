@@ -700,3 +700,52 @@ It is a good idea to count two different ways, to make sure something hasn't bee
 
 ### Combinatorial proofs
 The trick is to find the right set on which to do two independent countings.
+
+
+## Reading notes on Chapters 12 and 13
+There are no lectures covering this material, so I'm skimming the chapters for a flavor.
+
+
+### Generating Functions
+Generating functions have some great properties that remind me of Laplace transforms. There's probably a good mathematical reason for that. The multiplication of two generating functions is the convolution of the corresponding sequences. The running sum of a sequence is the generating function divided by $(1-x)$.
+
+The sequence given by any generating function is just the set of coefficients from the corresponding Taylor series.
+
+The use of partial fractions is also a nice throwback to manipulating Laplace transforms.
+
+I'd like to look deeper into generating functions someday...the overview in this chapter didn't say *why* any of this worked...just that it did.
+
+### Infinite Sets
+Adding an element to an infinite set $A$ does not change the size of $A$. $|A \cup \{b\}| = |A|$.
+
+A *countably infinite* set is one that has a bijection with $\mathbb{N}$. A finite set is countable. These are the only countable sets.
+
+Discrete mathematics is the mathematics of countable sets.
+
+The union of any countable sets is itself countable. The cross products of countable sets are also countable.
+
+The power set of a countably infinite set is uncountably infinite. There is a bijection between this power set and the reals, so the reals are uncountably infinite. There is a bijection between the integers and the rationals, so the rationals are countably inifinite.
+
+## Lecture 18
+### Monty Hall Problem
+An *outcome* of the Monty Hall game when the contestant switches consists of
+  1. The box with the prize.
+  2. The box chosen by the contestant first
+  3. The box revealed.
+
+Ex.: sample pt (2,1,3): prize under box 2, player picks box 1, box 3 revealed. Player wins (because switching is a given in this scenario).
+
+Sample space is the set of all possible outcomes. An outcome (or sample point) consists of all information about an experiment after it's performed, including all random choices. A sample space is uniform if every sample point has the same probability.
+
+Constructing the sample space with the tree method: Make a tree with three branches for which box the prize is in; these branch according to which box was chosen first; these branch according to which box was revealed; and the outcomes can be labeled win or loss.
+
+A **probability space** consists of a sample space and a probability function $P_r : S \rightarrow \mathbb(R)$ such that $\forall w \in S, 0 \leq P_r(w) \leq 1$ and $\sum P_r(w) = 1$. The probability map should be chosen so that $P_r(w)$ is the probabilty that $w$ is the outcome.
+
+Assumptions:
+  * The prize is in each box with probability $1/3$.
+  * The player picks each box with probability $1/3$ (random choice).
+  * The revealed box is chosen with probability $1/2$ (random choice).
+
+An *event* is a subset of the sample space. $E_L$ is the event that the player loses with the switching strategy. The probability that an event occurs is the sum of the probabilities of the elements in that subset.
+
+The "strange dice" problem: an arbitrary tournament graph can be made with some number $k$ rolls of these dice. Crazy.

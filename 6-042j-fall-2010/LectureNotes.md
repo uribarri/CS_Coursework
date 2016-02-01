@@ -749,3 +749,41 @@ Assumptions:
 An *event* is a subset of the sample space. $E_L$ is the event that the player loses with the switching strategy. The probability that an event occurs is the sum of the probabilities of the elements in that subset.
 
 The "strange dice" problem: an arbitrary tournament graph can be made with some number $k$ rolls of these dice. Crazy.
+
+### From the reading
+The sample space is a set; an element of the sample space is an outcome; and a subset of the sample space is an event. This is how these probability terms relate to set theory. A sample space combined with a probability function is a probability space. The probability function has all the usual properties I'm familiar with. The probability of an event is the sum of the probabilities of all the outcomes in the event.
+
+The probability of the union of disjoint events is the sum of the probabilities of the two events. This is the sum rule. The complement rule is a corollary.
+
+If a probability space is uniform (probability function is the same for every element of the space), the calculation of probability reduces to the calculation of cardinality.
+
+## Lecture 19
+### Conditional Probabilities
+$$P(A|B) = \frac{P(A \wedge B)}{P(B)}$$
+
+Product rule:
+$$P(A\wedge B) = P(B) P(A|B)$$
+$$P(A_1 \wedge A_2 \wedge ...\wedge A_n) = P(A_1)P(A_2|A_1)P(A_3 | A_1 \wedge A_2)...P(A_n|A_1 \wedge A_2 \wedge ... \wedge A_{n-1})$$
+
+Multiplying probabilities down a tree is precisely the product rule!
+
+*A posteieri* probability is a fancy name for saying that $B$ precedes $A$ in time.
+
+Distributive set rules only work when the set rules appear on the left side of the conditional bar.
+
+Examples cited:
+  * fair-unfair coin flips
+  * medical test accuracy
+  * carnival dice
+  * Berkley sex discrimination case
+  * Airline choices
+
+## From the reading
+### Bayes' Rule:
+$$P(B|A) P(A) = P(A \wedge B) = P(A|B)P(A)$$
+
+### Law of Total Probability
+$$ P(A) = \sum_{i=1}^n P(A|E_i)P(E_i)$$
+if
+$$\sum_{x=1}^n P(E_i) = 1$$
+or if the union of the disjoint $E_i$ constitute the entire sample space.

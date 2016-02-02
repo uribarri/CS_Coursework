@@ -787,3 +787,26 @@ $$ P(A) = \sum_{i=1}^n P(A|E_i)P(E_i)$$
 if
 $$\sum_{x=1}^n P(E_i) = 1$$
 or if the union of the disjoint $E_i$ constitute the entire sample space.
+
+## Lecture 20
+### Independence
+Event $A$ is independent of $B$ if
+  1. $P(A|B) = P(A)$
+  2. $P(B) = 0$
+
+Disjointness does not imply independence. One example of Venn diagram is for $B$ to intersect $A$ for 50% of its area.
+
+Product rule for independent events
+$$P(A \wedge B) = P(A) P(B)$$
+
+Symmetry of independence: if $A$ is independent of $B$, then $B$ is independent of $A$.
+
+Biased coins are not independent if the events are tailored properly. In ultimate Frisbee, flipping the frisbees is biased, so if two Frisbees are flipped simultaneously, always call "same".
+
+Events are mutually independent if the probability of the event given all the other events occur is the same as the probabilty of the event occurring by itself. *Pairwise* independence does not imply mutual independence.
+
+"Blackout babies" are those that were conceived during the big blackout of '03 in the Northeast...I remember that...
+
+The "Birthday Principle" says that if you have about $1.2 \sqrt{N}$ elements to fit randomly into $N$ bins, you have about a 50% chance of having two elements go into one bin.
+
+Hashing: $x$ *collides* with $y$ if $h(x) = h(y)$ but $x \not = y$. The Birthday Attack breaks cryptographic systems based on collisions. The probability of collision is defined by the Birthday Principle.

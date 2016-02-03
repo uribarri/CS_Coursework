@@ -30,3 +30,42 @@ The collection of numbers, assignments, i/o, comparisons, and looping is suffici
 A function is stored as a procedure object, with a pointer back to the environment in which it was called.
 
 If a Python function doesn't have a local binding for a variable, it will look to the parent frame for a binding to inherit.
+
+## Lecture 7
+**Testing**: running the code on examples to get known outputs
+**Debugging**: finding errors in the code
+
+Syntax and static semantic errors are easy: handled by the Python interpreter at load time, for example.
+
+Formal testing methods only work on simple code, generally. Exhaustive testing is reserved for critical code. A test suite is a partition of the input space, to create a set of inputs from each subspace.
+
+**Black Box Testing**: using heuristics based on exploring paths through the specifications
+
+**Glass Box Testing**: using heuristics based on exploring paths through the code
+
+A *path complete* glass box test goes through every possible path in the code.
+
+*Unit testing* vs *integration testing*. One catches algorithm bugs, the other interaction bugs. *Regression testing* checks that the code still checks out on all tests after all bugs have been fixed.
+
+*Stubs* simulate parts of a program that haven't yet been written.
+
+Bugs:
+  * Overt: an obvious manifestation
+  * Covert: code runs and returns, but may be wrong value
+  * Persistent: occurs every time code is run
+  * Intermittent: only occurs sometimes, even when run on the same input
+
+Defensive programming: trying to make all bugs overt and persistent.
+
+## Lecture 8
+Exceptions: TypeError, IndexError, NameError
+preferred way of dealing with an exception: `raise Exception("descriptive string")`
+
+`try:
+  ...
+except TypeofError,e:
+  ...`
+
+`else` and `finally` code can be used to clean up (closing files, etc)
+
+`assert` statement: checking that assumptions are met on either inputs or outputs

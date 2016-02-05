@@ -810,3 +810,6 @@ Events are mutually independent if the probability of the event given all the ot
 The "Birthday Principle" says that if you have about $1.2 \sqrt{N}$ elements to fit randomly into $N$ bins, you have about a 50% chance of having two elements go into one bin.
 
 Hashing: $x$ *collides* with $y$ if $h(x) = h(y)$ but $x \not = y$. The Birthday Attack breaks cryptographic systems based on collisions. The probability of collision is defined by the Birthday Principle.
+
+### Notes from the reading
+A stronger statement should be made: disjoint events are *never* independent. This is because if $B$ happens, we know that $A$ does *not* happen.

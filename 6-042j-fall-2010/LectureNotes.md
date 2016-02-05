@@ -826,7 +826,7 @@ Two RVs are independent in much the same way that two probabilities are independ
 ### Probability Distribution Function
 The PDF of $R$ is $f(x) = P(R=x)$. The CDF $c(x) = P(R \leq x)$.
 
-For indicator RVs, $f(0) = p$, $f(1) = 1-p$; $c(0) = p$, $c(1) = 1$. For uniform RVs, $f(x) = 1/N$ for $1 \leq x \leq N$.
+For indicator RVs the PDF is called the *Bernoulli Distribution*: $f(0) = p$, $f(1) = 1-p$; $c(0) = p$, $c(1) = 1$. For uniform RVs, $f(x) = 1/N$ for $1 \leq x \leq N$. The Bernouilli distribution is uniform for $p=1/2$.
 
 Some great algorithms (like `quicksort`) are randomized. This was illustrated with the "number-choosing" game, where the optimal strategy was to choose a random number in the range of possibilities and switch based on whether the revealed number is lower than the random guess. This is based on a uniform distribution.
 
@@ -842,3 +842,14 @@ $$f_{n,p}(k) = {n \choose k} p^k (1-p)^{n-k}$$
 for $0 \leq p \leq 1$.
 
 Example given with $n$ components, $k$ failures, probability of failure of a single component $p$.
+
+### From the reading
+Emphasize: random variables are *FUNCTIONS*. This is probably why the nomenclature surrounding them has always been a bit confusing to me.
+
+Indicator random variables and events are interchangeable: they both partition the sample space into points inside $E$, and points outside. An equation or inequality involving a general random variable is also an event.
+
+Two events are independent iff their indicator variables are independent.
+
+I'm looking forward to encountering randomized algorithms in `6.006`. This will help explain to me what all the fuss is over random number generators.
+
+The entropy function $H(\alpha) = \alpha \log(1/\alpha) + (1-\alpha) \log(1/(1-\alpha))$. Strange that I should have just computed that without knowing that it had a name...though I suspected as much given it was so simple. No way I could be the first.

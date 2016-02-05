@@ -813,3 +813,32 @@ Hashing: $x$ *collides* with $y$ if $h(x) = h(y)$ but $x \not = y$. The Birthday
 
 ### Notes from the reading
 A stronger statement should be made: disjoint events are *never* independent. This is because if $B$ happens, we know that $A$ does *not* happen.
+
+## Lecture 21
+A *random variable* is a function from the sample space to the real numbers. $R: S \rightarrow \mathbb{R}$.
+
+An *indicator* or *characteristic* random variable is one that assigns sample space points to $0$ or $1$.
+
+A random variable defines block partitions of the sample space. Conditional probability concepts carry over to random variables.
+
+Two RVs are independent in much the same way that two probabilities are independent. If indepedent, $P(R_1 = x_1 \wedge R_2 = x_2) = P(R_1=x_1)\cdot P(R_2 = x_2)$. Mutual independence works as well.
+
+### Probability Distribution Function
+The PDF of $R$ is $f(x) = P(R=x)$. The CDF $c(x) = P(R \leq x)$.
+
+For indicator RVs, $f(0) = p$, $f(1) = 1-p$; $c(0) = p$, $c(1) = 1$. For uniform RVs, $f(x) = 1/N$ for $1 \leq x \leq N$.
+
+Some great algorithms (like `quicksort`) are randomized. This was illustrated with the "number-choosing" game, where the optimal strategy was to choose a random number in the range of possibilities and switch based on whether the revealed number is lower than the random guess. This is based on a uniform distribution.
+
+### Binomial distribution
+**Biased** or **unbiased**.
+
+Unbiased is
+$$f_n(k) = {n \choose k} 2^{-n}$$
+for $n \geq 1$, $0 \leq k \leq n$.
+
+General is
+$$f_{n,p}(k) = {n \choose k} p^k (1-p)^{n-k}$$
+for $0 \leq p \leq 1$.
+
+Example given with $n$ components, $k$ failures, probability of failure of a single component $p$.

@@ -853,3 +853,17 @@ Two events are independent iff their indicator variables are independent.
 I'm looking forward to encountering randomized algorithms in `6.006`. This will help explain to me what all the fuss is over random number generators.
 
 The entropy function $H(\alpha) = \alpha \log(1/\alpha) + (1-\alpha) \log(1/(1-\alpha))$. Strange that I should have just computed that without knowing that it had a name...though I suspected as much given it was so simple. No way I could be the first.
+
+## Lecture 22
+The *expected value* (average, mean) of a random variable $R$ over a probability space $S$ is $Ex[R]$ is the weighted sum of all possible values of the random variable.
+
+The *median* is the value such that $P(R < x) \leq 1/2$ and $P(R > x) > 1/2$.
+
+An example of a rigged game is given, just using a coin toss, where the outcomes are influenced by two players colluding to choose different outcomes so that the third player's expected gain is negative.
+
+Maximizing probability of winning is not equivalent to maximizing expected value (e.g., all winners share the pot....)
+
+If the range of the random variable is $\mathbb{N}$, then another way to get expected value is
+$$\sum_{i=1}^{\infty} P(R \geq i) = \sum_{i=1}^{\infty} i P(R=i)$$
+
+Expectation value has the property of linearity. That is true whether or not the random variables are independent.

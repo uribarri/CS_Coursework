@@ -867,3 +867,20 @@ If the range of the random variable is $\mathbb{N}$, then another way to get exp
 $$\sum_{i=1}^{\infty} P(R \geq i) = \sum_{i=1}^{\infty} i P(R=i)$$
 
 Expectation value has the property of linearity. That is true whether or not the random variables are independent.
+
+
+## Lecture 23
+Given probability space $S$ and $n$ events $A_i$, the expected number of events to occur is $\sum_1^n P(A_i)$ when $A_i$ forms a partition of $S$.
+
+When $E[T] \ll 1$:
+
+$$P(T \geq 1) = \sum_{i=1}^{\infty} P(A_i)$$
+
+**Murphy's Law.** Given $n$ mutually independent events $A_i$, the probability that *none of them* occur, $P(T=0) \leq e^{-E(T)}$
+
+*Proof.* $P(T=0) = P(\bar{A}_1 \wedge \bar{A}_2 \wedge ...)$. Because these are independent, this is
+$$\prod_1^n (1-P(A_i)) \leq \prod_1^n e^{-P(A_i)} =e^{-\sum_1^n P(A_i)} = e^{-E(T)}$$
+
+**Product rule for expectation.** If RVs are independent, then $E[R_1R_2] = E[R_1]E[R_2]$. This differs from sums in that *independence is needed*.
+
+$$Var(R) = E[(R - E[R])^2]$$

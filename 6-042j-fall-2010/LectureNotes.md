@@ -884,3 +884,13 @@ $$\prod_1^n (1-P(A_i)) \leq \prod_1^n e^{-P(A_i)} =e^{-\sum_1^n P(A_i)} = e^{-E(
 **Product rule for expectation.** If RVs are independent, then $E[R_1R_2] = E[R_1]E[R_2]$. This differs from sums in that *independence is needed*.
 
 $$Var(R) = E[(R - E[R])^2]$$
+
+## Lecture 24
+### Markov's Theorem
+If $R /geq 0$ is a random variable, then $x > 0$ then $P(R \geq x) \leq \frac{Ex[R]}{x}$. Also, $P(R \leq x) \leq \frac{u-E[x]}{u - x}$ for $R,x\leq u$.
+
+Markov provides an upper bound, but it's not always a tight upper bound.
+
+**Chebyshev's Theorem.** $\forall x > 0$ and any random variable $R$: $P(|R - E[R]| \geq x) \leq \frac{Var(R)}{x^2}$
+
+**Chernoff Bound.** Let $T_n$ be a set of mutually independent random veriables such that each $0 \leq T_n \leq 1$. Let $T=\sum T_n$ Then for $c > 1$, $P(T \geq c E[T]) \leq e^{-zE[T]}$, where $z = c\ln{c} + 1 - c$.

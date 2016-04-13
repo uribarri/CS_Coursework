@@ -893,7 +893,7 @@ Markov provides an upper bound, but it's not always a tight upper bound.
 
 **Chebyshev's Theorem.** $\forall x > 0$ and any random variable $R$: $P(|R - E[R]| \geq x) \leq \frac{Var(R)}{x^2}$
 
-**Chernoff Bound.** Let $T_n$ be a set of mutually independent random veriables such that each $0 \leq T_n \leq 1$. Let $T=\sum T_n$ Then for $c > 1$, $P(T \geq c E[T]) \leq e^{-zE[T]}$, where $z = c\ln{c} + 1 - c$.
+**Chernoff Bound.** Let $T_n$ be a set of mutually independent random variables such that each $0 \leq T_n \leq 1$. Let $T=\sum T_n$ Then for $c > 1$, $P(T \geq c E[T]) \leq e^{-zE[T]}$, where $z = c\ln{c} + 1 - c$.
 
 ## Lecture 25
 ### Random walks

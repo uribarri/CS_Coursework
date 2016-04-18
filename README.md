@@ -20,3 +20,4 @@ I will sync anything fairly substantive into the repo here; one of my goals is t
 |Intro to Computer Science (CS50) | *No* (iTunesU) | *none* | ~2012 | When EdX and Coursera were still in gestation |
 |Systematic Program Design: Part I| [link](https://courses.edx.org/certificates/user/359704/course/course-v1:UBCx+SPD1x+1T2016) | [link](https://github.com/uribarri/CS_Coursework/tree/master/Systematic%20Program%20Design/Part%20I) | 11/2015 | Chose to ignore final project, since feedback wasn't available and there's plenty of room to practice elsewhere. |
 |Introduction to Functional Programming | [link](https://courses.edx.org/certificates/f084b150ceeb4b01bbb24cfd05f8b89a) | *none* | 12/2015 | Good intro till wk 7; then the jump to monads was abrupt. |
+|Intro to Computer Science and Programming | [link](https://courses.edx.org/certificates/c02b171b3fae45b69c6d2e257294bf08) | *none* | 03/2016 | Very introductory, yet still had elements I had never learned before... |

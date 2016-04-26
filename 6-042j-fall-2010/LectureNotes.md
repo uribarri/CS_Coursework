@@ -909,3 +909,7 @@ $$\left(\frac{p}{1-p}\right)^m$$
 where $m$ is the amount that you want to win. This assumes a game biased against you, even a little bit.
 
 For a biased random walk, the drift is linear in the expected gain (or loss). That's the *drift*. The *swings* are defined by the variance, which goes like $\sqrt{x}$. The drift totally dominates the swings, asymptotically.
+
+## Final Thoughts
+
+What a fantastic course. I learned a ton, and got a ton of practice with things that I already knew. I spent countless hours in that practice and ensuring that I understood what was going on. I read the entire textbook. And it was all completely worth it.
